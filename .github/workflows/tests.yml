@@ -37,7 +37,6 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
-
       - name: Install dependencies
         run: |
           composer update --prefer-dist --no-progress
@@ -60,3 +59,6 @@ jobs:
           OCI_SSH_PUBLIC_KEY: ${{ secrets.OCI_SSH_PUBLIC_KEY }}
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }}
           TELEGRAM_BOT_API_KEY: ${{ secrets.TELEGRAM_BOT_API_KEY }}
+          AD_ALWAYS_FREE: ${{ secrets.AD_ALWAYS_FREE }}
+          TEST_IMAGE_ID: ${{ secrets.TEST_IMAGE_ID }}
+          TEST_SUBNET_ID: ${{ secrets.TEST_SUBNET_ID }}
